@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+    <style>
+        div {
+            width: 200px;
+            height: 300px;
+            border: 5px solid blue;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #fill {
+            object-fit: fill;
+        }
+
+        #contain {
+            object-fit: contain;
+        }
+
+        #cover {
+            object-fit: cover;
+        }
+
+        #none {
+            object-fit: none;
+        }
+
+        #scale-down {
+            object-fit: scale-down;
+        }
+
+        #position01 {
+            object-fit: cover;
+            object-position: 20px -40px;
+        }
+
+        #position02 {
+            object-fit: none;
+            object-position: top right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Propriedade <code>object-fit</code></h1>
+    <code>object-fit: fill;</code>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="fill">
+    </div>
+    
+    <code>object-fit: contain;</code>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="contain">
+    </div>
+
+    <code>object-fit: cover;</code>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="cover">
+    </div>
+
+    <code>object-fit: none;</code>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="none">
+    </div>
+
+    <code>object-fit: scale-down;</code>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="scale-down">
+    </div>
+    <hr>
+    <h1>Propriedade <code>object-position</code></h1>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="position01">
+    </div>
+    <div>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU64qjXEPwzBG6jTyKyLQDfh4q1gxKLAH2foZz0t0pTONTyBA0WO-G37XPiWKvA7d-AFfA_psXq7JaZsOXzJFC8NZOxbJRgnfdeWoZIejvSX4U7AZplqcbssxi1NWRlWVpb5Vi7uK1mduVdFJvqAF1-AfxvMYjlRfYaXMSWKxjR2NUBZK90pfsQ9Nu7w/s16000/dio-digital-innovation-one.jpg"
+            id="position02">
+    </div>
+</body>
+
+</html>

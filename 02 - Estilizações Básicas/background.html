@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundos</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        h2 {
+            cursor:url(https://cdn.custom-cursor.com/db/9643/32/star-wars-r2-d2-pointer.png) , pointer !important;
+        }
+
+        .img {
+            background-image: url('imgTest.jpg');
+            margin: 10px;
+            border: 2px solid white;
+        }
+
+        .mini-img {
+            background-image: url('imgMini.png');
+        }
+
+        .double-img {
+            background-image: url('imgTest.jpg'), url('imgMini.png');
+        }
+
+        .small {
+            width: 250px;
+            height: 250px;
+        }
+
+        .medium {
+            width: 500px;
+            height: 500px;
+        }
+
+        .large {
+            width: 750px;
+            height: 750px;
+        }
+
+        .size-contain {
+            background-size: contain;
+        }
+
+        .size-cover {
+            background-size: cover;
+        }
+
+        .size-auto {
+            background-size: auto;
+        }
+
+        .size-custom {
+            background-size: 750px 50%;
+        }
+
+        .repeat-repeat {
+            background-repeat: repeat;
+        }
+
+        .repeat-space {
+            background-repeat: space;
+        }
+
+        .repeat-round {
+            background-repeat: round;
+        }
+
+        .repeat-no {
+            background-repeat: no-repeat;
+        }
+
+        #position-example {
+            background-image: url('imgMini.png'), url('imgTest.jpg');
+            background-repeat: no-repeat, no-repeat;
+            background-position: left, right;
+            border: 1px solid red;
+        }
+    </style>
+    <script defer>
+        function handleCollapse(id) {
+            const myDiv = document.getElementById(id)
+            if (myDiv.style.display === "none") {
+                myDiv.style.display = "block";
+            } else {
+                myDiv.style.display = "none";
+            }
+        }
+
+        function handleSelectionPosition(element, target, img) {
+            const value = element.value;
+            const item = document.getElementById(target)
+            const style = window.getComputedStyle(item)
+            let newPositions = style.getPropertyValue("background-position").split(", ");
+            console.log("newPositions", newPositions)
+            newPositions[img] = value
+            //console.log(newPositions.join(", "))
+            item.style.backgroundPosition = newPositions.join(", ")
+            //console.log(item.style.backgroundPosition)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Background</h1>
+    <!--SIZE-->
+    <h2 onclick="handleCollapse('sizes')">- Size</h2>
+    <div id="sizes">
+        <p>contain</p>
+        <div class="img medium size-contain"></div>
+        <p>cover</p>
+        <div class="img medium size-cover"></div>
+        <p>auto</p>
+        <div class="img medium size-auto"></div>
+        <p>750px 50%</p>
+        <div class="img medium size-custom"></div>
+    </div>
+    <hr>
+    <!--REPEAT-->
+    <h2 onclick="handleCollapse('repeats')">- Repeat</h2>
+    <div id="repeats">
+        <p>repeat</p>
+        <div class="mini-img small repeat-repeat"></div>
+        <p>space</p>
+        <div class="mini-img small repeat-space"></div>
+        <p>round</p>
+        <div class="mini-img small repeat-round"></div>
+        <p>no</p>
+        <div class="mini-img small repeat-no"></div>
+    </div>
+    <hr>
+    <!--POSITION-->
+    <h2 onclick="handleCollapse('positions')">- Position</h2>
+    <div id="positions">
+        <div class="large" id="position-example"></div>
+        <div>
+            <label>
+                Img1:
+                <select onchange="handleSelectionPosition(this, 'position-example', 0)">
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="center">center</option>
+                </select>
+            </label>
+            <label>
+                Img2:
+                <select onchange="handleSelectionPosition(this, 'position-example', 1)">
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="center">center</option>
+                </select>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>

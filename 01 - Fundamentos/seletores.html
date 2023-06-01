@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores</title>
+    <style>
+        * {
+            font-weight: bold;
+        }
+
+        h1 {
+            background-color: darkblue;
+            color: lightgreen;
+        }
+
+        div {
+            background: lightblue;
+            color: darkblue;
+        }
+
+        li {
+            background: lightgreen;
+        }
+
+        #texto-welcome {
+            background: red;
+            color: white;
+        }
+
+        .classe {
+            background: teal;
+            color: white;
+        }
+
+        .classe-2 {
+            border: 1px solid red;
+            text-transform: uppercase;
+        }
+
+        [title] {
+            color: orange;
+        }
+
+        [title = "Super"] {
+            background-color: black;
+        }
+
+        [title ^= "A"] {
+            background-color: purple;
+        }
+
+        [title $= "r"] {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        [title *= "f"] {
+            border: 2px solid lime;
+        }  
+
+    </style>
+</head>
+<body>
+    <h1>Seletores</h1>
+    <p id="texto-welcome">Welcome</p>
+    <p id="explicacao">CSS possuí seletores por ID</p>
+    <div>
+        <p class="classe">Hello</p>
+        <ul>
+            <li><b>1.</b>Tipo</li>
+            <li><b>2.</b>ID</li>
+            <li class="classe classe-2"><b>3.</b>Classe</li>
+            <li><b>4.</b>Universal</li>
+            <li title="Super"><b>5.</b>Atributo 1</li>
+            <li title="Attr"><b>6.</b>Atributo 2</li>
+            <li title="Super"><b>7.</b>Atributo 3</li>
+            <li title="Alfa"><b>8.</b>Atributo 4</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

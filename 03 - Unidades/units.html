@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades</title>
+    <style>
+        .container {
+            width: 500px;
+            font-size: 20px;
+            background-color: rgb(100, 100, 100);
+            resize: both;
+            border: 5px solid black;
+        }
+    </style>
+    <script defer>
+        function randomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r > 175 ? r : 175}, ${g > 175 ? g : 175}, ${b > 175 ? b : 175})`;
+        }
+
+        function doColorize() {
+            console.log("Teste");
+            const element = document.getElementById('div01')
+            console.log(typeof element)
+            for (let index = 0; index < element.children.length; index++) {                
+                const child = element.children[index]
+                if (child.tagName === 'P') {
+                    continue
+                } else {
+                    child.style.backgroundColor = randomColor()
+                }                
+            }
+        }
+
+        function doResizeWidth(e) {
+            const element = document.getElementById('div01')
+            element.style.width = `${e.value}px`
+            element.children[0].textContent = `width: ${e.value}px`
+        }
+
+        function doResizeFont(e) {
+            const element = document.getElementById('div02')
+            element.style.fontSize = `${e.value}px`
+            element.children[1].textContent = `font-size: ${e.value}px`
+            const p1 = document.getElementById("p0.5em")
+            p1.textContent = `font-size: 0.5em/${window.getComputedStyle(p1).fontSize}`
+            const p2 = document.getElementById("p1em")
+            p2.textContent = `font-size: 1em/${window.getComputedStyle(p2).fontSize}`
+            const p3 = document.getElementById("p1.5em")
+            p3.textContent = `font-size: 1.5em/${window.getComputedStyle(p3).fontSize}`
+            const div1 = document.getElementById("div1em")
+            div1.textContent = `width: 1em/${window.getComputedStyle(div1).width}`
+            const div2 = document.getElementById("div2em")
+            div2.textContent = `width: 2em/${window.getComputedStyle(div2).width}`
+            const div3 = document.getElementById("div4em")
+            div3.textContent = `width: 4em/${window.getComputedStyle(div3).width}`            
+        }
+
+        function doViewportCalc() {
+            console.log('doCalc')
+            const element = document.getElementById('div03')
+            const child1 = element.children[0]
+            child1.textContent = `10x10 = ${window.getComputedStyle(child1).width}X${window.getComputedStyle(child1).height}`
+            const child2 = element.children[1]
+            child2.textContent = `25x25 = ${window.getComputedStyle(child2).width}X${window.getComputedStyle(child2).height}`
+        }
+
+        function onLoad() {
+            doColorize()
+            doViewportCalc()
+        }
+
+        document.addEventListener('DOMContentLoaded', onLoad)
+        window.addEventListener('resize', doViewportCalc)
+    </script>
+</head>
+
+<body>
+    <div class="container" id="div01">
+        <p>width: 500px</p>
+        <div style="width: 300px;">300px</div>
+        <div style="width: 50%;">50%</div>
+    </div>
+    <label>
+        div-width:
+        <br>
+        250
+        <input type="range" min="250" max="750" value="500" onchange="doResizeWidth(this)">
+        750 px
+    </label>
+    <hr>
+    <div class="container" id="div02">
+        <p>width: 500px</p>
+        <p>font-size: 15px</p>
+        <p style="font-size: 0.5em;" id="p0.5em">0.5em</p>
+        <p style="font-size: 1em;" id="p1em">1em</p>
+        <p style="font-size: 1.5em;" id="p1.5em">1.5em</p>
+        <div style="background-color: teal; width: 1em;" id="div1em">1em</div>
+        <div style="background-color: brown; width: 2em" id="div2em">2em</div>
+        <div style="background-color: purple; width: 4em" id="div4em">4em</div>
+    </div>
+    <label>
+        div-width:
+        <br>
+        10
+        <input type="range" min="10" max="25" value="15" onchange="doResizeFont(this)">
+        25 px
+    </label>
+    <hr>
+    <div class="container" id="div03">
+        <div style="height: 10vh; width: 10vw; background-color: springgreen;">
+        </div>
+        <div style="height: 25vh; width: 25vw; background-color: cornflowerblue;">
+        </div>
+        <button></button>
+    </div>
+</body>
+
+</html>

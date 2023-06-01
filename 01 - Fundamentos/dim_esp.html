@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensionamento & Espaçamento</title>
+</head>
+<style>
+    hr {
+        margin: 50px 0px;
+    }
+    #div-01 {
+        background-color: #770077;
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+
+    #div-02 {
+        background-color: #007777ee;
+        height: inherit;
+        border: 1px solid blue;
+    }
+
+    
+    #div-03 {
+        width: 300px;
+        height: 300px;
+        background-color: teal;
+    }
+    
+    #div-04 {
+        width: 300px;
+        height: 300px;
+        background-color: peru;
+        margin: 10px 20px 30px 40px;
+        padding: 40px 30px 20px 10px;
+        border: 1px solid black;
+    }
+
+    button {
+        background-color: pink;
+        min-width: 100px;
+        max-width: 500px;
+        min-height: 100px;
+        max-height: 200px;
+    }
+
+</style>
+<script defer>
+    function alongButton () {
+        const button = document.querySelector('#button_01');
+        if (button.textContent.length > 150) {
+            button.textContent = "Botão com texto looooongo!"
+        } else {
+            button.textContent = button.textContent.replace("ooooo","oooooooooo");
+        }
+    }
+
+</script>
+<body>
+    <div id="div-01">
+        Sou a div 01
+        <div id="div-02">
+            Sou a div 02
+        </div>
+    </div>
+    <hr>
+    <button id="button_01" onclick="alongButton()">
+        Botão com texto looooongo!
+    </button>
+    <hr>
+    <div id="div-03"></div>
+    <div id="div-04">X</div>
+    
+</body>
+</html>

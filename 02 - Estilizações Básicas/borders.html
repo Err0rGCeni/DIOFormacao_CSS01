@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordas</title>
+    <style>
+        body {
+            background-color: teal;
+        }
+
+        label {
+            font-size: 20px;           
+            font-family: sans-serif;
+        }
+
+        .exemplo {
+            background-color: palevioletred;
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+    <script defer>
+        function handleProp(key, value) {
+            console.log(key, value)
+            const element = document.getElementById('target-div')
+            element.style[key] = value
+        }
+    </script>
+</head>
+
+<body>
+    <div class="exemplo" id="target-div"></div>
+    <label>border-width:
+        <input type="range" min="0" max="50" onchange="handleProp('border-width', `${this.value}px`)"/>
+    </label>
+    <br>
+    <label>border-style:
+        <select onchange="handleProp('border-style', this.value)">
+            <option value="none">none</option>
+            <option value="hidden">hidden</option>
+            <option value="dotted">dotted</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+        </select>
+    </label>
+    <br>
+    <label>border-color:
+        <input type="color" onchange="handleProp('border-color', this.value)">
+    </label>
+    <br>
+    <label>border-radius:
+        <input type="range" min="0" max="50" onchange="handleProp('border-radius', `${this.value}px`)"/>
+    </label>
+</body>
+
+</html>
